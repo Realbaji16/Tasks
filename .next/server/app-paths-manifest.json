@@ -1,0 +1,7 @@
+{
+  "/task-retweet/page": "app/task-retweet/page.js",
+  "/task-timeline/page": "app/task-timeline/page.js",
+  "/task-another/page": "app/task-another/page.js",
+  "/task-video/page": "app/task-video/page.js",
+  "/leaderboard/page": "app/leaderboard/page.js"
+}
