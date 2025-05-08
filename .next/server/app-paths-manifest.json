@@ -1,6 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
+  "/connect-twitter/page": "app/connect-twitter/page.js",
   "/task-timeline/page": "app/task-timeline/page.js",
-  "/auth/page": "app/auth/page.js"
+  "/task-retweet/page": "app/task-retweet/page.js",
+  "/influencer/page": "app/influencer/page.js",
+  "/twitter-info/page": "app/twitter-info/page.js"
 }

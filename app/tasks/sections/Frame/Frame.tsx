@@ -1,24 +1,45 @@
-import { ChartBarIcon, EyeOffIcon, LayoutDashboardIcon } from "lucide-react";
-import React from "react";
-import { Button } from "../../../../components/ui/button"
+'use client';
+
+import { ChartBarIcon, LayoutDashboardIcon, TrophyIcon } from "lucide-react";
+import React, { useState } from "react";
+import Link from "next/link";
+import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export default function Frame() {
-  // Navigation items data
-  const navItems = [
+  // Navigation items data with state
+  const [navItems, setNavItems] = useState([
     {
       id: 1,
       name: "Tasks",
       icon: <LayoutDashboardIcon className="w-5 h-5" />,
       active: true,
+      route: "/tasks",
     },
     {
       id: 2,
       name: "Leaderboard",
       icon: <ChartBarIcon className="w-5 h-5" />,
       active: false,
+      route: "/leaderboard",
     },
-  ];
+    {
+      id: 3,
+      name: "Influencer Rewards",
+      icon: <TrophyIcon className="w-5 h-5" />,
+      active: false,
+      route: "/influencer",
+    },
+  ]);
+
+  // Handle active state
+  const handleActiveState = (id) => {
+    setNavItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, active: true } : { ...item, active: false }
+      )
+    );
+  };
 
   return (
     <aside className="w-[292px] h-screen sticky top-0 bg-[#171717] rounded-[20px] overflow-hidden border border-solid border-[#494949] m-5">
@@ -39,11 +60,10 @@ export default function Frame() {
           </h1>
         </div>
         <img
-                className="w-[34px] h-[34px] bg-[#ffffff1a] rounded-[5px]"
-                alt="Logo icon"
-                src="./arr.svg"
-              />
-       
+          className="w-[34px] h-[34px] bg-[#ffffff1a] rounded-[5px]"
+          alt="Logo icon"
+          src="./arr.svg"
+        />
       </div>
 
       {/* Navigation menu */}
@@ -51,23 +71,47 @@ export default function Frame() {
         <ul className="space-y-7">
           {navItems.map((item) => (
             <li key={item.id}>
-              <Button
-                variant={item.active ? "secondary" : "ghost"}
-                className={`w-full justify-start gap-1.5 h-[45px] ${
-                  item.active
-                    ? "bg-[#ffffff0d] text-white font-semibold"
-                    : "bg-transparent text-white font-normal"
-                }`}
-              >
-                {item.icon}
-                <span className="font-['Inter',Helvetica] text-base">
-                  {item.name}
-                </span>
-              </Button>
+              <Link href={item.route}>
+                <Button
+                  variant={item.active ? "secondary" : "ghost"}
+                  className={`w-full justify-start gap-1.5 h-[45px] ${
+                    item.active
+                      ? "bg-[#ffffff0d] text-white font-semibold"
+                      : "bg-transparent text-white font-normal"
+                  }`}
+                  onClick={() => handleActiveState(item.id)} // Move the onClick handler here
+                >
+                  {item.icon}
+                  <span className="font-['Inter',Helvetica] text-base">
+                    {item.name}
+                  </span>
+                </Button>
+              </Link>
             </li>
           ))}
         </ul>
       </nav>
+
+      <Card className="w-[239px] h-[117px] absolute bottom-[20%] left-3.5 rounded-[20px] border border-solid border-[#494949] bg-transparent">
+        <CardContent className="p-0 relative h-full">
+          <div className="flex items-start p-[19px] gap-3">
+            <div className="flex w-10 h-10 items-center justify-center bg-[#d9d9d91a] rounded-[20px]">
+         
+            </div>
+            <div>
+              <h3 className="font-['Inter',Helvetica] font-medium text-white text-base">
+                Myth0x
+              </h3>
+              <p className="font-['Inter',Helvetica] font-medium text-text-1 text-xs">
+              GPoints: 3,250
+              </p>
+            </div>
+          </div>
+          <h1 className="absolute bottom-[9px] left-14 h-[25px] rounded-[30px] px-[15px]text-lg font-medium text-white">
+          X:@mythhh
+          </h1>
+        </CardContent>
+      </Card>
 
       {/* Daily challenge card */}
       <Card className="w-[239px] h-[117px] absolute bottom-7 left-3.5 rounded-[20px] border border-solid border-[#494949] bg-transparent">
@@ -96,6 +140,7 @@ export default function Frame() {
           </Button>
         </CardContent>
       </Card>
+
     </aside>
   );
-};
+}
