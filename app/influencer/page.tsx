@@ -1,14 +1,99 @@
-import React from "react";
+'use client'
+
+import React, { useState } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { Progress } from "../../components/ui/progress";
 import Frame from "../tasks/sections/Frame/Frame";
 
-export default function Taskthread() {
+export default function Influencer() {
+      const [menuOpen, setMenuOpen] = useState(false);
+    
+      const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+      };
   return (
-    <main className="bg-black flex flex-row justify-center w-full font-inter min-h-screen">
-      <div className="bg-black w-[90%] flex">
+    <div className="bg-black">
+    <main className="bg-black min-h-screen  py-4 pt-2  lg:flex flex-col lg:flex-row justify-center lg:w-[100%] mx-auto font-inter">
+              <div className="lg:hidden flex justify-between p-4 bg-[#171717]">
+                <div className="flex items-center gap-2">
+                  <img src="./gslogo.svg" alt="Gigsol Logo" className="w-8 h-8" />
+                  <h1 className="text-white text-xl font-semibold">GIGSOL</h1>
+                </div>
+                <button onClick={toggleMenu} className="text-white">
+                  <img src="./burg.svg" alt="hamburger"/>
+                </button>
+              </div>
+              <p className="bg-[#171717] w-[90%] mx-auto mt-8 text-white md:hidden text-center p-4 font-[16px] text-lg mt-4 mb-2">
+              Start your quest journey and claim your rewards by joining our community
+              </p>
+        
+              {/* Slide-Out Menu */}
+              {menuOpen && (
+          <div className="lg:hidden fixed top-0 right-0 w-3/4 h-full bg-[#171717] z-50 p-5">
+            {/* Close Button */}
+            <button
+              onClick={toggleMenu}
+              className="text-white text-2xl absolute top-4 right-4"
+            >
+              ✖
+            </button>
+        
+            {/* Gigsol Logo */}
+            <div className="flex items-center gap-2 mb-8">
+              <img src="./gslogo.svg" alt="Gigsol Logo" className="w-8 h-8" />
+              <h1 className="text-white text-xl font-semibold">GIGSOL</h1>
+            </div>
+        
+            {/* Navigation Links */}
+            <nav className="space-y-6">
+              <a
+                href="/tasks"
+                className="block text-white text-lg font-medium hover:text-gray-400"
+              >
+                Tasks
+              </a>
+              <a
+                href="/leaderboard"
+                className="block text-white text-lg font-medium hover:text-gray-400"
+              >
+                Leaderboard
+              </a>
+              <a
+                href="/influencer"
+                className="block text-white text-lg font-medium hover:text-gray-400"
+              >
+                Influencer Rewards
+              </a>
+            </nav>
+        
+            {/* User Info */}
+            <div className="mt-10">
+              <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] p-4 mt-72 mb-6">
+                <CardContent className="flex flex-col gap-2">
+                  <h3 className="text-white font-medium text-base">Myth0x</h3>
+                  <p className="text-gray-400 text-sm">GPoints: 3,250</p>
+                  <p className="text-gray-400 text-sm">X:@mythhh</p>
+                </CardContent>
+              </Card>
+        
+              {/* Daily Challenge */}
+              <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] p-4">
+                <CardContent className="flex flex-col gap-2">
+                  <h3 className="text-white font-medium text-base">Daily Challenge</h3>
+                  <p className="text-gray-400 text-sm">
+                    Earn up to 1000 points per day
+                  </p>
+                  <button className="mt-4 bg-gradient-to-r from-[#00FFA3] to-[#DC1FFF] text-black font-medium py-2 px-4 rounded-lg">
+                    Complete Challenge
+                  </button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )}
+      <div className="bg-black w-[90%] mx-auto flex">
         {/* Left Sidebar */}
-        <Frame />
+        <Frame className="hidden lg:block" />
 
         {/* Right Content Area */}
         <div className="w-full md:w-3/4 flex mt-12 flex-col gap-6">
@@ -30,7 +115,7 @@ export default function Taskthread() {
           {/* Rewards + Invite Tracker Section */}
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Formula Reference */}
-            <Card className="bg-black border-none w-full lg:w-2/3 text-sm rounded-[20px] p-6">
+            <Card className="bg-black border-none w-full lg:w-2/3 text-sm rounded-[20px] ">
   <CardContent>
     <h3 className="text-lg text-white font-semibold mb-4">📊 Formula Reference</h3>
     {/* Table Header */}
@@ -63,7 +148,7 @@ export default function Taskthread() {
   </CardContent>
 </Card>
             {/* Invite Tracker */}
-            <Card className="bg-gray-900 border border-purple-600 w-full lg:w-1/3 text-sm rounded-[20px] p-6">
+            <Card className="bg-gray-900 border border-purple-600 w-full lg:w-1/3 text-sm rounded-[20px] p-6 mb-8">
               <CardContent>
                 <h3 className="text-lg font-semibold text-white mb-4">📩 Invite Tracker</h3>
                 <p className="text-white">
@@ -95,5 +180,6 @@ export default function Taskthread() {
         </div>
       </div>
     </main>
+    </div>
   );
 }

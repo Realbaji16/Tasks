@@ -2,8 +2,7 @@ import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Progress } from "../../../../components/ui/progress";
 
-export default function Groupwrapper () {
-  // Define the action cards data for easier mapping
+export default function Groupwrapper() {
   const actionCardsRow1 = [
     {
       title: "Create 30s Video",
@@ -17,10 +16,7 @@ export default function Groupwrapper () {
       iconUrl:
         "https://c.animaapp.com/mae39egt4IHjtX/img/clip-path-group-2.png",
     },
-
   ];
-
-
 
   return (
     <section className="w-full mb-8">
@@ -28,7 +24,7 @@ export default function Groupwrapper () {
         {/* Header section */}
         <Card className="w-full border-none h-[152px] rounded-[20px] overflow-hidden bg-gradient-to-r from-[#504CFF] to-[#480090] bg-cover mb-[-45px] z-10 relative">
           <CardContent className="p-0">
-            <div className="relative w-full h-full p-[35px] pl-[57px]">
+            <div className="relative w-full h-full p-[35px] md:pl-[57px]">
               <div className="relative">
                 <h2 className="[font-family:'Inter',Helvetica] font-semibold text-[#ffffff] text-lg tracking-[0] leading-[normal]">
                 Power Actions: Show You're a Degen
@@ -38,7 +34,7 @@ export default function Groupwrapper () {
                   <div className="relative self-stretch [font-family:'Inter',Helvetica] font-medium text-[#ffffff] text-xs tracking-[0] leading-[normal]">
                     1/3
                   </div>
-                  <div className="relative w-[396px] h-[3px] bg-[#ffffff80] rounded-[10px]">
+                  <div className="relative w-[290px] md:w-[396px] h-[3px] bg-[#ffffff80] rounded-[10px]">
                     <Progress
                       value={33}
                       className="w-[130px] h-[3px] bg-primary-blue rounded-[10px]"
@@ -51,10 +47,9 @@ export default function Groupwrapper () {
         </Card>
 
         {/* Main content section */}
-        <Card className="w-full border-none  bg-[#161616] rounded-[20px] overflow-hidden pt-[79px]">
+        <Card className="w-full border-none bg-[#161616] rounded-[20px] overflow-hidden pt-[79px]">
           <CardContent className="p-0">
-            {/* First row of action cards */}
-            <div className="flex items-center gap-[11px] px-[27px] mb-[21px]">
+            <div className="flex flex-col sm:flex-row items-center gap-[11px] px-[27px] mb-[21px]">
               {actionCardsRow1.map((card, index) => (
                 <Card
                   key={index}
@@ -92,10 +87,9 @@ export default function Groupwrapper () {
                 </Card>
               ))}
             </div>
-
           </CardContent>
         </Card>
       </div>
     </section>
   );
-};
+}

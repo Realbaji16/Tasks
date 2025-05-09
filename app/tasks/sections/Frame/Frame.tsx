@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-export default function Frame() {
+export default function Frame({ className }: { className?: string }) {
   // Navigation items data with state
   const [navItems, setNavItems] = useState([
     {
@@ -42,7 +42,9 @@ export default function Frame() {
   };
 
   return (
-    <aside className="w-[292px] h-screen sticky top-0 bg-[#171717] rounded-[20px] overflow-hidden border border-solid border-[#494949] m-5">
+    <aside
+      className={`w-[292px] h-screen sticky top-0 bg-[#171717] rounded-[20px] overflow-hidden border border-solid border-[#494949] m-5 ${className}`}
+    >
       {/* Header with logo and collapse button */}
       <div className="flex justify-between items-center p-5">
         <div className="flex items-center gap-[9.56px]">
@@ -95,9 +97,7 @@ export default function Frame() {
       <Card className="w-[239px] h-[117px] absolute bottom-[20%] left-3.5 rounded-[20px] border border-solid border-[#494949] bg-transparent">
         <CardContent className="p-0 relative h-full">
           <div className="flex items-start p-[19px] gap-3">
-            <div className="flex w-10 h-10 items-center justify-center bg-[#d9d9d91a] rounded-[20px]">
-         
-            </div>
+          
             <div>
               <h3 className="font-['Inter',Helvetica] font-medium text-white text-base">
                 Myth0x
@@ -107,7 +107,7 @@ export default function Frame() {
               </p>
             </div>
           </div>
-          <h1 className="absolute bottom-[9px] left-14 h-[25px] rounded-[30px] px-[15px]text-lg font-medium text-white">
+          <h1 className="absolute bottom-[9px] left-4 h-[25px] rounded-[30px] px-[15px]text-lg font-medium text-white">
           X:@mythhh
           </h1>
         </CardContent>
@@ -135,9 +135,18 @@ export default function Frame() {
               </p>
             </div>
           </div>
-          <Button className="absolute bottom-[9px] left-14 h-[25px] rounded-[30px] px-[15px] py-2.5 text-xs font-medium [background:linear-gradient(186deg,rgba(0,255,163,1)_0%,rgba(220,31,255,1)_100%)]">
-            Complete challenge
-          </Button>
+          <div className="relative mt-4">
+  <Button className="absolute bottom-[9px] left-14 h-[25px] w-[150px] rounded-[30px] px-[15px] py-2.5 text-xs font-medium [background:linear-gradient(186deg,rgba(0,255,163,1)_0%,rgba(220,31,255,1)_100%)] group overflow-hidden">
+    {/* Default Text */}
+    <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-full">
+      Complete challenge
+    </span>
+    {/* Hover Text */}
+    <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 translate-y-full group-hover:translate-y-0">
+      Coming Soon
+    </span>
+  </Button>
+</div>
         </CardContent>
       </Card>
 
