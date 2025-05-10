@@ -1,9 +1,7 @@
 {
-  "/task-comment/page": "app/task-comment/page.js",
-  "/task-quote/page": "app/task-quote/page.js",
+  "/task-telegram/page": "app/task-telegram/page.js",
+  "/task-timeline/page": "app/task-timeline/page.js",
   "/task-retweet/page": "app/task-retweet/page.js",
   "/task-thread/page": "app/task-thread/page.js",
-  "/task-telegram/page": "app/task-telegram/page.js",
-  "/task-video/page": "app/task-video/page.js",
-  "/task-timeline/page": "app/task-timeline/page.js"
+  "/task-video/page": "app/task-video/page.js"
 }

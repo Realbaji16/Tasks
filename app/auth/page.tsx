@@ -4,7 +4,7 @@ const AuthPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4">
       {/* Logo Section */}
-      <div className="absolute lg:w-[50%] md:px-12 top-8 w flex justify-between items-center w-full max-w-6xl mb-16">
+      <div className="absolute lg:w-[50%] px-2 md:px-12 top-8 w flex justify-between items-center w-full max-w-6xl mb-16">
         <div>
           <img alt="Logo icon" src="./gslogo.svg" className="h-10 w-auto" />
         </div>
@@ -15,15 +15,13 @@ const AuthPage = () => {
             <span className="text-gray-400 text-sm sm:text-base">
               Already have an account?
             </span>
-            <button className="px-8 bg-gray-900 py-2 border border-gray-500 rounded-md hover:bg-gray-700 text-sm sm:text-base">
-              Sign In
-            </button>
+          
           </div>
         </div>
       </div>
 
       {/* Authentication Form */}
-      <div className="w-full max-w-md  p-8 pb-32 rounded-3xl shadow-lg border border-gray-700">
+      <div className="w-full max-w-md  bg-[#0A0A0A] p-8 pb-32 rounded-3xl shadow-lg border border-gray-700">
         <h1 className="text-2xl font-semibold text-center mb-4">
           Welcome to Gigsol
         </h1>

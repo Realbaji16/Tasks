@@ -6,12 +6,12 @@ import Frame from "../tasks/sections/Frame/Frame";
 export default function Taskthread() {
   return (
     <main className="bg-black flex flex-row justify-center w-full font-inter min-h-screen">
-      <div className="bg-black w-[90%] flex">
+      <div className="bg-black w-full flex">
         {/* Left Sidebar */}
-        <Frame />
+        <Frame className="hidden md:block"/>
 
         {/* Right Content Area */}
-        <div className="flex justify-center items-center w-3/4 h-screen">
+        <div className="flex justify-center mx-auto items-center md:w-3/4 h-screen">
   {/* Connect Twitter Section */}
   <Card className="bg-gray-900 p-6 text-white border border-[#494949] rounded-[20px] w-full max-w-[500px] ">
     <CardContent className="flex flex-col gap-4">

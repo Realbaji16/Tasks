@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Progress } from "../../../../components/ui/progress";
 
-export default function Groupwrapper() {
+export default function Groupwrapper({ className }: { className?: string }) {
   const actionCardsRow1 = [
     {
       title: "Create 30s Video",
@@ -19,10 +19,12 @@ export default function Groupwrapper() {
   ];
 
   return (
-    <section className="w-full mb-8">
+    <section className="w-full lg:w-[90%] mb-8">
       <div className="relative">
         {/* Header section */}
-        <Card className="w-full border-none h-[152px] rounded-[20px] overflow-hidden bg-gradient-to-r from-[#504CFF] to-[#480090] bg-cover mb-[-45px] z-10 relative">
+        <Card className="w-full border-none h-[152px] rounded-[20px] overflow-hidden bg-cover bg-center mb-[-45px] z-10 relative"
+          style={{ backgroundImage: "url('./imgbg.svg')" }}
+        >
           <CardContent className="p-0">
             <div className="relative w-full h-full p-[35px] md:pl-[57px]">
               <div className="relative">

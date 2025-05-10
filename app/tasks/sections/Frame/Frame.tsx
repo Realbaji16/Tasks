@@ -1,6 +1,6 @@
 'use client';
 
-import { ChartBarIcon, LayoutDashboardIcon, TrophyIcon } from "lucide-react";
+import { ChartBarIcon, LayoutDashboardIcon, TrophyIcon, LogOutIcon } from "lucide-react";
 import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "../../../../components/ui/button";
@@ -94,7 +94,7 @@ export default function Frame({ className }: { className?: string }) {
         </ul>
       </nav>
 
-      <Card className="w-[239px] h-[117px] absolute bottom-[20%] left-3.5 rounded-[20px] border border-solid border-[#494949] bg-transparent">
+      <Card className="w-[239px] h-[117px] absolute bottom-[30%] left-3.5 rounded-[20px] border border-solid border-[#494949] bg-transparent">
         <CardContent className="p-0 relative h-full">
           <div className="flex items-start p-[19px] gap-3">
           
@@ -114,7 +114,7 @@ export default function Frame({ className }: { className?: string }) {
       </Card>
 
       {/* Daily challenge card */}
-      <Card className="w-[239px] h-[117px] absolute bottom-7 left-3.5 rounded-[20px] border border-solid border-[#494949] bg-transparent">
+      <Card className="w-[239px] h-[117px] absolute bottom-[15%] left-3.5 rounded-[20px] border border-solid border-[#494949] bg-transparent">
         <CardContent className="p-0 relative h-full">
           <div className="flex items-start p-[19px] gap-3">
             <div className="flex w-10 h-10 items-center justify-center bg-[#d9d9d91a] rounded-[20px]">
@@ -147,9 +147,16 @@ export default function Frame({ className }: { className?: string }) {
     </span>
   </Button>
 </div>
+
+
         </CardContent>
+      
       </Card>
 
+<Button className="absolute bottom-[10%] left-4 h-[25px] w-[150px] rounded-[30px] px-[120px] py-4 text-xs font-medium bg-white text-black group overflow-hidden">
+  <LogOutIcon className="inline-block w-4 h-4 mr-2" /> 
+  Log out
+</Button>
     </aside>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Progress } from "../../../../components/ui/progress";
 
-export default function Wrapper() {
+export default function Wrapper({ className }: { className?: string }) {
   const actionCardsRow1 = [
     {
       title: "Retweet Post",
@@ -20,7 +20,7 @@ export default function Wrapper() {
       title: "Retweet another post",
       points: 100,
       iconUrl:
-        "https://c.animaapp.com/mae39egt4IHjtX/img/clip-path-group-3.png",
+        "https://c.animaapp.com/mae39egt4IHjtX/img/clip-path-group-4.png",
     },
   ];
 
@@ -34,16 +34,18 @@ export default function Wrapper() {
     {
       title: "Quote tweet",
       points: 100,
-      iconUrl: "https://c.animaapp.com/mae39egt4IHjtX/img/telegram.svg",
+      iconUrl: "https://c.animaapp.com/mae39egt4IHjtX/img/clip-path-group-4.png",
       isSvg: true,
     },
   ];
 
   return (
-    <section className="w-full mb-8">
+    <section className="w-full lg:w-[90%] mb-8">
       <div className="relative">
         {/* Header */}
-        <Card className="w-full border-none h-[152px] rounded-[20px] overflow-hidden bg-gradient-to-r from-[#504CFF] to-[#480090] bg-cover mb-[-45px] z-10 relative">
+        <Card className="w-full border-none h-[152px] rounded-[20px] overflow-hidden bg-cover bg-center mb-[-45px] z-10 relative"
+          style={{ backgroundImage: "url('./imgbg.svg')" }}
+        >
           <CardContent className="p-0">
             <div className="relative w-full h-full p-[35px] md:pl-[57px]">
               <div className="relative">
@@ -88,7 +90,7 @@ export default function Wrapper() {
                       </div>
                     </div>
 
-                    <div className="flex flex-col w-[156px] items-start gap-3.5 absolute top-[26px] left-[21px]">
+                    <div className="flex flex-col w-[256px] items-start gap-3.5 absolute top-[26px] left-[21px]">
                       <div className="text-white text-base font-medium">
                         {card.title}
                       </div>

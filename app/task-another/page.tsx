@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { Progress } from "../../components/ui/progress";
 import Frame from "../tasks/sections/Frame/Frame";
+import { ChartBarIcon, LayoutDashboardIcon, TrophyIcon } from "lucide-react";
+import { Button } from "../../components/ui/button";
+import Link from "next/link";
 
 export default function Taskanother() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +30,7 @@ export default function Taskanother() {
 
   return (
        <div className="bg-black">
-       <main className="bg-black min-h-screen  py-4 pt-2  lg:flex flex-col lg:flex-row justify-center lg:w-[90%] mx-auto font-inter">
+       <main className="bg-black min-h-screen  py-4 pt-2  lg:flex flex-col lg:flex-row justify-center  mx-auto font-inter">
          {/* Mobile Header */}
          <div className="lg:hidden flex justify-between p-4 bg-[#171717]">
            <div className="flex items-center gap-2">
@@ -44,45 +47,48 @@ export default function Taskanother() {
    
          {/* Slide-Out Menu */}
          {menuOpen && (
-     <div className="lg:hidden fixed top-0 right-0 w-3/4 h-full bg-[#171717] z-50 p-5">
+     <div className="lg:hidden  fixed top-0 right-0 w-3/4 h-full bg-[#171717] z-50 px-8 p-5">
        {/* Close Button */}
        <button
          onClick={toggleMenu}
-         className="text-white text-2xl absolute top-4 right-4"
+         className="text-white text-2xl absolute mt-4 right-4"
        >
          ✖
        </button>
    
        {/* Gigsol Logo */}
-       <div className="flex items-center gap-2 mb-8">
+       <div className="flex items-center mt-4 gap-2 mb-8">
          <img src="./gslogo.svg" alt="Gigsol Logo" className="w-8 h-8" />
          <h1 className="text-white text-xl font-semibold">GIGSOL</h1>
        </div>
    
        {/* Navigation Links */}
-       <nav className="space-y-6">
-         <a
-           href="/tasks"
-           className="block text-white text-lg font-medium hover:text-gray-400"
-         >
-           Tasks
-         </a>
-         <a
-           href="/leaderboard"
-           className="block text-white text-lg font-medium hover:text-gray-400"
-         >
-           Leaderboard
-         </a>
-         <a
-           href="/influencer"
-           className="block text-white text-lg font-medium hover:text-gray-400"
-         >
-           Influencer Rewards
-         </a>
-       </nav>
+       <nav className="space-y-12 pt-6">
+  <Link
+    href="/tasks"
+    className="flex items-center gap-2 text-white text-base font-medium hover:text-gray-400"
+  >
+    <LayoutDashboardIcon className="w-5 h-5" />
+    Tasks
+  </Link>
+  <Link
+    href="/leaderboard"
+    className="flex items-center gap-2 text-white text-base font-medium hover:text-gray-400"
+  >
+    <ChartBarIcon className="w-5 h-5" />
+    Leaderboard
+  </Link>
+  <Link
+    href="/influencer"
+    className="flex items-center gap-2 text-white text-base font-medium hover:text-gray-400"
+  >
+    <TrophyIcon className="w-5 h-5" />
+    Influencer Rewards
+  </Link>
+</nav>
    
        {/* User Info */}
-       <div className="mt-10">
+       <div className="mt-8">
          <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] p-4 mt-72 mb-6">
            <CardContent className="flex flex-col gap-2">
              <h3 className="text-white font-medium text-base">Myth0x</h3>
@@ -98,9 +104,18 @@ export default function Taskanother() {
              <p className="text-gray-400 text-sm">
                Earn up to 1000 points per day
              </p>
-             <button className="mt-4 bg-gradient-to-r from-[#00FFA3] to-[#DC1FFF] text-black font-medium py-2 px-4 rounded-lg">
-               Complete Challenge
-             </button>
+             <div className="relative mt-4">
+  <Button className="absolute text-black  h-[25px] w-[150px] rounded-[30px] px-[15px] py-2.5 text-xs font-medium bg-[#30EAF7] group overflow-hidden">
+    {/* Default Text */}
+    <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-full">
+      Complete challenge
+    </span>
+    {/* Hover Text */}
+    <span className="absolute bg-[#30EAF7] inset-0 flex items-center justify-center transition-transform duration-300 translate-y-full group-hover:translate-y-0">
+      Coming Soon
+    </span>
+  </Button>
+</div>
            </CardContent>
          </Card>
        </div>
@@ -141,9 +156,11 @@ export default function Taskanother() {
                {/* Left: Task Group and List */}
                <div className="hidden lg:block col-span-2 space-y-4">
                  {/* Gradient Task Group Card */}
-                 <div className="bg-gradient-to-r from-[#504CFF] to-[#480090] rounded-[20px] p-4 text-white w-full">
+                <div className="bg-cover bg-center  rounded-[20px] p-4 text-white w-full"
+                  style={{ backgroundImage: "url('./imgbg.svg')" }}
+               >
                    <p className="text-lg font-semibold">
-                     Power Actions: Show You're a Degen
+                   Boost & Shill: Light Social Actions
                    </p>
                    <p className="text-sm mb-1 mt-4">1/3</p>
                    <div className="relative w-full h-[3px] bg-[#ffffff80] rounded-[10px]">
