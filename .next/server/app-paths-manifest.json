@@ -1,7 +1,5 @@
 {
-  "/task-telegram/page": "app/task-telegram/page.js",
-  "/task-timeline/page": "app/task-timeline/page.js",
-  "/task-retweet/page": "app/task-retweet/page.js",
-  "/task-thread/page": "app/task-thread/page.js",
-  "/task-video/page": "app/task-video/page.js"
+  "/page": "app/page.js",
+  "/influencer/page": "app/influencer/page.js",
+  "/task-another/page": "app/task-another/page.js"
 }

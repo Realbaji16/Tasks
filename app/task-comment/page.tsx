@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { Progress } from "../../components/ui/progress";
 import Frame from "../tasks/sections/Frame/Frame";
@@ -14,6 +14,18 @@ export default function Taskcomment() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+    useEffect(() => {
+      if (menuOpen) {
+        document.body.classList.add('overflow-hidden', 'h-screen');
+      } else {
+        document.body.classList.remove('overflow-hidden', 'h-screen');
+      }
+  
+      return () => {
+        document.body.classList.remove('overflow-hidden', 'h-screen');
+      };
+    }, [menuOpen]);
 
   const questionMarkImages = [
     { top: 0, left: "143px", width: "101px", height: "94px" },
@@ -64,7 +76,7 @@ export default function Taskcomment() {
        </div>
    
        {/* Navigation Links */}
-       <nav className="space-y-12 pt-6">
+       <nav className="space-y-4 pt-6">
   <Link
     href="/tasks"
     className="flex items-center gap-2 text-white text-base font-medium hover:text-gray-400"
@@ -90,7 +102,7 @@ export default function Taskcomment() {
    
        {/* User Info */}
        <div className="mt-8">
-         <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] p-4 mt-72 mb-6">
+         <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] p-4 mt-12 mb-6">
            <CardContent className="flex flex-col gap-2">
              <h3 className="text-white font-medium text-base">Myth0x</h3>
              <p className="text-gray-400 text-sm">GPoints: 3,250</p>
@@ -122,7 +134,7 @@ export default function Taskcomment() {
        </div>
      </div>
    )}
-       
+    
              <div className="bg-black w-full flex flex-col lg:flex-row">
                {/* Left Sidebar */}
                <Frame className="hidden lg:block" />

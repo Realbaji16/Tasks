@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { Progress } from "../../components/ui/progress";
 import Frame from "../tasks/sections/Frame/Frame";
@@ -9,11 +9,25 @@ import { Button } from "../../components/ui/button";
 import Link from "next/link";
 
 export default function Influencer() {
+
+  
       const [menuOpen, setMenuOpen] = useState(false);
     
       const toggleMenu = () => {
         setMenuOpen(!menuOpen);
       };
+
+       useEffect(() => {
+          if (menuOpen) {
+            document.body.classList.add('overflow-hidden', 'h-screen');
+          } else {
+            document.body.classList.remove('overflow-hidden', 'h-screen');
+          }
+      
+          return () => {
+            document.body.classList.remove('overflow-hidden', 'h-screen');
+          };
+        }, [menuOpen]);
   return (
     <div className="bg-black">
     <main className="bg-black min-h-screen  py-4 pt-2  lg:flex flex-col lg:flex-row justify-center lg:w-[100%] mx-auto font-inter">
@@ -46,7 +60,7 @@ export default function Influencer() {
        </div>
    
        {/* Navigation Links */}
-       <nav className="space-y-12 pt-6">
+       <nav className="space-y-4 pt-6">
   <Link
     href="/tasks"
     className="flex items-center gap-2 text-white text-base font-medium hover:text-gray-400"
@@ -72,7 +86,7 @@ export default function Influencer() {
    
        {/* User Info */}
        <div className="mt-8">
-         <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] p-4 mt-72 mb-6">
+         <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] p-4 mt-12 mb-6">
            <CardContent className="flex flex-col gap-2">
              <h3 className="text-white font-medium text-base">Myth0x</h3>
              <p className="text-gray-400 text-sm">GPoints: 3,250</p>
@@ -171,10 +185,10 @@ export default function Influencer() {
                 <p className="text-white">
                   Invites: <strong>82</strong> / 100 required
                 </p>
-                 <div className="relative w-[296px] my-8 h-[3px] bg-[#ffffff80] rounded-[10px]">
+                 <div className="relative w-[246px] my-8 h-[3px] bg-[#ffffff80] rounded-[10px]">
                                     <Progress
                                       value={33}
-                                      className="w-[130px] h-[3px] bg-[#30EAF7] rounded-[10px]"
+                                      className="w-[80px] h-[3px] bg-[#30EAF7] rounded-[10px]"
                                     />
                                   </div>
                 <div className="space-y-2 text-gray-300">

@@ -1,4 +1,4 @@
-// File: C:\Users\elish\OneDrive\Desktop\taskreward\app\influencer\page.tsx
+// File: C:\Users\obaji\Tasks\app\influencer\page.tsx
 import * as entry from '../../../../app/influencer/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
