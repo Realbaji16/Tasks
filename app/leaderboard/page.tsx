@@ -90,17 +90,16 @@ export default function Task() {
 </nav>
    
        {/* User Info */}
-       <div className="mt-8">
-         <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] p-4 mt-12 mb-6">
-           <CardContent className="flex flex-col gap-2">
-             <h3 className="text-white font-medium text-base">Myth0x</h3>
-             <p className="text-gray-400 text-sm">GPoints: 3,250</p>
-             <p className="text-gray-400 text-sm">X:@mythhh</p>
-           </CardContent>
-         </Card>
-   
+     <div className="mt-8">
+       <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] px-0 py-4 mt-12 mb-6">
+  <CardContent className="flex flex-col gap-2">
+    <h3 className="text-gray-100 font-medium text-base">Myth0x</h3>
+    <p className="text-white text-lg">GPoints: 3,250</p>
+    <p className="text-gray-400 text-sm">X:@mythhh</p>
+  </CardContent>
+</Card>
          {/* Daily Challenge */}
-         <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] p-4">
+         <Card className="w-full bg-transparent border border-[#494949] rounded-[20px] px-0 py-4 ">
            <CardContent className="flex flex-col gap-2">
              <h3 className="text-white font-medium text-base">Daily Challenge</h3>
              <p className="text-gray-400 text-sm">

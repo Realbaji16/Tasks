@@ -1611,6 +1611,10 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -1801,6 +1805,14 @@ video {
 }
 .text-white {
   color: var(--white);
+}
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity, 1));
+}
+.text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity, 1));
 }
 .underline {
   text-decoration-line: underline;
