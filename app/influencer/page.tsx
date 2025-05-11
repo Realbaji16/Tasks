@@ -150,7 +150,7 @@ export default function Influencer() {
   <CardContent>
     <h3 className="text-lg text-white font-semibold mb-4">📊 Formula Reference</h3>
     {/* Table Header */}
-    <div className="flex justify-between items-center bg-[#ffffff1a] p-4 rounded-t-lg text-gray-300 font-medium">
+    <div className="flex justify-between items-center bg-[#ffffff1a] mb-4 p-4 rounded-t-lg text-gray-300 font-medium">
       <span className="w-1/3">Twitter Handle</span>
       <span className="w-1/3 text-center">Reward Value</span>
       <span className="w-1/3 text-right">Invite Target</span>

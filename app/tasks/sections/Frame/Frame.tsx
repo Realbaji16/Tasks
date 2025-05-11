@@ -47,26 +47,24 @@ export default function Frame({ className }: { className?: string }) {
     >
       {/* Header with logo and collapse button */}
       <div className="flex justify-between items-center p-5">
-        <div className="flex items-center gap-[9.56px]">
-          <div className="relative w-[40.39px] h-[39.2px]">
-            <div className="relative w-[37px] h-8 top-1 left-0.5 bg-[url(https://c.animaapp.com/mae39egt4IHjtX/img/vector.svg)] bg-[100%_100%]">
-              <img
-                className="absolute w-[15px] h-3 top-3.5 left-[11px]"
-                alt="Logo icon"
-                src="./gslogo.svg"
-              />
-            </div>
-          </div>
-          <h1 className="font-['Montserrat',Helvetica] font-semibold text-white text-[28.7px]">
-            GIGSOL
-          </h1>
-        </div>
-        <img
-          className="w-[34px] h-[34px] bg-[#ffffff1a] rounded-[5px]"
-          alt="Logo icon"
-          src="./arr.svg"
-        />
-      </div>
+  <div className="flex items-center gap-[9.56px]">
+    <div className="relative w-[40.39px] h-[39.2px] flex items-center justify-center">
+      <img
+        className="w-[37px] h-8"
+        alt="Logo icon"
+        src="./gslogo.svg"
+      />
+    </div>
+    <h1 className="font-['Montserrat',Helvetica] font-semibold text-white text-[28.7px]">
+      GIGSOL
+    </h1>
+  </div>
+  <img
+    className="w-[34px] h-[34px] bg-[#ffffff1a] rounded-[5px]"
+    alt="Menu icon"
+    src="./arr.svg"
+  />
+</div>
 
       {/* Navigation menu */}
       <nav className="mt-12 px-3">
@@ -95,8 +93,8 @@ export default function Frame({ className }: { className?: string }) {
       </nav>
 
       <Card className="w-[239px] h-[117px] absolute bottom-[30%] left-3.5 rounded-[20px] border border-solid border-[#494949] bg-transparent">
-        <CardContent className="p-0 relative h-full">
-          <div className="flex items-start p-[19px] gap-3">
+        <CardContent className="pl-12 relative h-full">
+          <div className="flex items-start p-[19px]  gap-3">
           
             <div>
               <h3 className="font-['Inter',Helvetica] font-medium text-white text-base">
@@ -107,7 +105,7 @@ export default function Frame({ className }: { className?: string }) {
               </p>
             </div>
           </div>
-          <h1 className="absolute bottom-[9px] left-4 h-[25px] rounded-[30px] px-[15px]text-lg font-medium text-white">
+          <h1 className="absolute bottom-[9px]  h-[25px] rounded-[30px] px-[15px] text-lg font-medium text-white">
           X:@mythhh
           </h1>
         </CardContent>
